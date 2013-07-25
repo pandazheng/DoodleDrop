@@ -10,7 +10,7 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "HelloWorldLayer.h"
-
+#import "GameScene.h"
 
 #pragma mark - IntroLayer
 
@@ -55,11 +55,12 @@
 	[self addChild: background];
 	
 	// In one second transition to the new scene
-	[self scheduleOnce:@selector(makeTransition:) delay:1];
+//	[self scheduleOnce:@selector(makeTransition:) delay:1];
+    [[CCDirector sharedDirector] runWithScene:[GameScene scene]];
 }
 
--(void) makeTransition:(ccTime)dt
-{
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] withColor:ccWHITE]];
-}
+//-(void) makeTransition:(ccTime)dt
+//{
+//	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameScene scene] withColor:ccWHITE]];
+//}
 @end
